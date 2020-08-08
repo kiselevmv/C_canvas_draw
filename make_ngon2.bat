@@ -1,0 +1,1 @@
+tcc -o n-gon.exe n-gon2.c ..\qdbmp.c

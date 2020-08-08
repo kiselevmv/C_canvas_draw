@@ -1,0 +1,1 @@
+tcc -o show_palette.exe show_palette.c ..\qdbmp.c

@@ -1,0 +1,1 @@
+tcc -o negative.exe negative.c ..\qdbmp.c
