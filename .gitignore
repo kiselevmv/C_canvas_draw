@@ -10,9 +10,10 @@
 # Other
 .DS_Store
 godseye
-ngon2
+n-gon2
 gradient
 *.bmp
+
 # Linker output
 *.ilk
 *.map
