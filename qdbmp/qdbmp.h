@@ -118,8 +118,8 @@ void			BMP_SetPaletteColor			( BMP* bmp, UCHAR index, UCHAR r, UCHAR g, UCHAR b 
 
 
 /* Error handling */
-BMP_STATUS		BMP_GetError				();
-const char*		BMP_GetErrorDescription		();
+BMP_STATUS		BMP_GetError				( void );
+const char*		BMP_GetErrorDescription		( void );
 
 
 /* Useful macro that may be used after each BMP operation to check for an error */

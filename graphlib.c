@@ -13,6 +13,7 @@ static float XYScale;
 static BMP* Canvas;
 
 
+
 /* 
 This alhoritm is not universal enougch. It need a warper to draw a lines in any direction.
 Bresenham alhorithm is for sloped lines only 												 
@@ -115,13 +116,6 @@ void Line ( int X0, int Y0, int X1, int Y1 )
 	YPen = Y(Y1);
 }
 
-inline void Plot( UINT *x, UINT *y, BMP* *bmp) 
-/* This is inline function, because it just too short. 
-Smart compiler will find a way to substitut this inline function into the main function 
-#define used instead of inline fuction, juse because this is oneliner */
-{ 
-    BMP_SetPixelIndex( *bmp, *x, *y, ColorIndex ); 
-} 
 
 void CloseGraph ( void )
 {

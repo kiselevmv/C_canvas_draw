@@ -14,7 +14,8 @@
 /* Creates Godseye  */
 int main( int argc, char* argv[] )
 {
-    int i;            // for cycle counters only
+    int i;
+    /* i for cycle counters only */
     int id1, id2;
 
     /* Create canvas for drawing */
@@ -33,6 +34,5 @@ int main( int argc, char* argv[] )
 		LineTo(id1, 0);
     }
 	
-	CloseGraph();
-    return 0; 
+
 }

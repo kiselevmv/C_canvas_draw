@@ -19,7 +19,8 @@ void Line ( int X0, int Y0, int X1, int Y1 );
 void SetOrigin (  int XMove, int YMove  );
 
 /* I/O */
-static void Stroke ( void );
+/* static void Stroke ( void ); */
+/* Stroke is for future development or obsolette */
 
 /* Basic draw */
 void plotBresenhamLine( int x0, int y0, int x1, int y1 );

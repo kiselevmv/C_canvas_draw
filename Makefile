@@ -1,13 +1,34 @@
 #My graphic examples in C
+CC = gcc # Flag for implicit rules
+CFLAGS = -g # Flag for implicit rules. Turn on debug info
+FULL_WARNINGS =  \
+        -std=gnu89 \
+        -fsigned-char \
+        -fno-builtin \
+        -fno-unroll-loops \
+        -pedantic \
+        -Wcast-qual \
+        -Wall \
+        -Wwrite-strings \
+        -Winline  \
+        -Wmissing-prototypes \
+        -Wmissing-declarations
+DEBUGOPTS = -g
+CFLAGS = -x c -O2 $(FULL_WARNINGS) $(DEBUGOPTS)
+
+VPATH = .:qdbmp
+
+CODESOURCE = qdbmp/qdbmp.c graphlib.c
+
 
 godseye:
-	gcc -o $@ -Lqdbmp -Iqdbmp godseye.c graphlib.c qdbmp/qdbmp.c 
+	$(CC) $(CFLAGS) $^ -Iqdbmp godseye.c $(CODESOURCE) -o $@ 
 
 gradient:
-	gcc -o $@ -Lqdbmp -Iqdbmp gradient.c qdbmp/qdbmp.c 
+	$(CC) $(CFLAGS) $^ -Iqdbmp gradient.c $(CODESOURCE) -o $@ 
 
 n-gon2:
-	gcc -o $@ -Lqbbmp -Iqdbmp n-gon2.c graphlib.c qdbmp/qdbmp.c 
+	$(CC) $(CFLAGS) $^ -Iqdbmp n-gon2.c $(CODESOURCE) -o $@
 
 clean:
 	rm -f gradient ngon2 godseye output.bmp

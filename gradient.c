@@ -18,7 +18,7 @@
 
 /* This alhoritm is not universal enougch. It need a warper to draw a lines in any direction.
 Bresenham alhorithm is for sloped lines only 												 */
-void plotBresenhamLine1(int x0, int y0, int x1, int y1, BMP* bmp, int color) {
+static void plotBresenhamLine1(int x0, int y0, int x1, int y1, BMP* bmp, int color) {
 	int dx, dy, D, x, y;
 	dx = x1 - x0;
 	dy = y1 - y0;
@@ -43,7 +43,7 @@ is line is horizontal or vertical.
 It still needs a warper function to process a horizontal anv vertical lines and lines with
 small deviation from horizontal and vertical. But with alhorim should I use for this cases? */
 
-void plotBresenhamLine2( int x0, int y0, int x1, int y1, BMP* bmp, int color) {
+static void plotBresenhamLine2( int x0, int y0, int x1, int y1, BMP* bmp, int color) {
 	int dx, sx, dy, sy, err, e2;
 	dx =  abs(x1-x0);
 	sx = x0<x1 ? 1 : -1;
@@ -69,7 +69,7 @@ void plotBresenhamLine2( int x0, int y0, int x1, int y1, BMP* bmp, int color) {
 	}
 }
 
-void Gradient(BMP* bmp) 
+static void Gradient(BMP* bmp) 
 {
 	int i, j;
 
@@ -89,7 +89,7 @@ void Gradient(BMP* bmp)
 	}
 }
 
-void DrawLines(BMP* bmp) {
+static void DrawLines(BMP* bmp) {
 	int i;
 
 	//plotBresenhamLine1( 50, 80, 500, 400, bmp, 5 );

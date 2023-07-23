@@ -621,7 +621,7 @@ void BMP_SetPaletteColor( BMP* bmp, UCHAR index, UCHAR r, UCHAR g, UCHAR b )
 /**************************************************************
 	Returns the last error code.
 **************************************************************/
-BMP_STATUS BMP_GetError()
+BMP_STATUS BMP_GetError( void )
 {
 	return BMP_LAST_ERROR_CODE;
 }
@@ -630,7 +630,7 @@ BMP_STATUS BMP_GetError()
 /**************************************************************
 	Returns a description of the last error code.
 **************************************************************/
-const char* BMP_GetErrorDescription()
+const char* BMP_GetErrorDescription( void )
 {
 	if ( BMP_LAST_ERROR_CODE > 0 && BMP_LAST_ERROR_CODE < BMP_ERROR_NUM )
 	{
