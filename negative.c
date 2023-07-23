@@ -5,7 +5,7 @@
 
 **************************************************************/
 
-#include "..\qdbmp.h"
+#include "qdbmp.h"
 #include <stdio.h>
 
 /* Creates a negative image of the input bitmap file */
@@ -25,7 +25,7 @@ int main( int argc, char* argv[] )
 
 	/* Read an image file */
 	bmp = BMP_ReadFile( argv[ 1 ] );
-	BMP_CHECK_ERROR( stdout, -1 );
+	// BMP_CHECK_ERROR( stdout, -1 );
 
 	/* Get image's dimensions */
 	width = BMP_GetWidth( bmp );
@@ -46,7 +46,7 @@ int main( int argc, char* argv[] )
 
 	/* Save result */
 	BMP_WriteFile( bmp, argv[ 2 ] );
-	BMP_CHECK_ERROR( stdout, -2 );
+	// BMP_CHECK_ERROR( stdout, -2 );
 
 
 	/* Free all memory allocated for the image */
