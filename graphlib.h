@@ -1,4 +1,4 @@
-#include "qdbmp\qdbmp.h"
+#include "qdbmp.h"
 
 
 #define PLOT(x, y) 			BMP_SetPixelIndex( bmp, x, y, ColorIndex );
@@ -22,7 +22,7 @@ void SetOrigin (  int XMove, int YMove  );
 static void Stroke ( void );
 
 /* Basic draw */
-void plotBresenhamLine( UINT x0, UINT y0, UINT x1, UINT y1 );
+void plotBresenhamLine( int x0, int y0, int x1, int y1 );
 
 int X ( int C );
 int Y ( int C );

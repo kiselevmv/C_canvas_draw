@@ -9,7 +9,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "..\qdbmp.h"
+#include "qdbmp.h"
+// #include "graphlib.h"
 
 #define	PALETTE_SIZE		256						/* Number of colors in an 8 bit palette */
 #define OUTPUT_WIDTH		640						/* Width of output image (pixels) */
@@ -42,7 +43,7 @@ is line is horizontal or vertical.
 It still needs a warper function to process a horizontal anv vertical lines and lines with
 small deviation from horizontal and vertical. But with alhorim should I use for this cases? */
 
-void plotBresenhamLine2( UINT x0, UINT y0, UINT x1, UINT y1, BMP* bmp, int color) {
+void plotBresenhamLine2( int x0, int y0, int x1, int y1, BMP* bmp, int color) {
 	int dx, sx, dy, sy, err, e2;
 	dx =  abs(x1-x0);
 	sx = x0<x1 ? 1 : -1;
@@ -117,14 +118,14 @@ int main( int argc, char* argv[] )
 
 	/* Create canvas for drawing */
 	canvas = BMP_Create( OUTPUT_WIDTH, OUTPUT_HEIGHT, 8 ); 
-	BMP_CHECK_ERROR( stderr, -3 );
+	// BMP_CHECK_ERROR( stderr, -3 );
 	
 	Gradient( canvas );
 	DrawLines( canvas );
 
 	/* Save output image */ 
 	BMP_WriteFile( canvas, "Gradient.bmp" );
-	BMP_CHECK_ERROR( stderr, -5 ); 
+	// BMP_CHECK_ERROR( stderr, -5 ); 
 
 	/* Free output image memory */
 	BMP_Free( canvas );

@@ -1,1 +1,0 @@
-tcc -o godseye.exe godseye.c qdbmp\qdbmp.c graphlib.c

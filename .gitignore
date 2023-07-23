@@ -7,6 +7,12 @@
 *.obj
 *.elf
 
+# Other
+.DS_Store
+godseye
+ngon2
+gradient
+*.bmp
 # Linker output
 *.ilk
 *.map

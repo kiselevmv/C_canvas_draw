@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
-#include "qdbmp\qdbmp.h"
+#include <stdlib.h>
+#include "qdbmp.h"
 #include "graphlib.h"
 
 static int ColorIndex = 1;	// Draw with index color = 1 by default.
@@ -16,7 +17,7 @@ static BMP* Canvas;
 This alhoritm is not universal enougch. It need a warper to draw a lines in any direction.
 Bresenham alhorithm is for sloped lines only 												 
 */
-void plotBresenhamLine( UINT x0, UINT y0, UINT x1, UINT y1 ) 
+void plotBresenhamLine( int x0, int y0, int x1, int y1 ) 
 {
 	int dx, sx, dy, sy, err, e2;
 	if ( abs (x0 - x1) < 2 ) /* Special case, vertical or almost vertical line. By thumb of thrust only lines with one pixel vert shift drawn badly */
@@ -76,7 +77,8 @@ void InitGraph (UINT H, UINT V, UINT width, UINT height)
 	XYScale = (XYScale > YScale) ? YScale : XYScale ;
 	printf("XYScale = %f\n", XYScale);
 	Canvas = BMP_Create( width, height, 8 );
-	BMP_CHECK_ERROR( stderr, -3 );
+	// BMP_CHECK_ERROR( stderr, -3 );
+	// I do not really understand, how this check error function work
 }
 
 void SetOrigin ( int XMove, int YMove )
@@ -134,8 +136,9 @@ void CloseGraph ( void )
 
 
     /* Save output image */ 
-    BMP_WriteFile( Canvas, "godseye1.bmp" );
-    BMP_CHECK_ERROR( stderr, -5 );  
+    BMP_WriteFile( Canvas, "output.bmp" );
+    // BMP_CHECK_ERROR( stderr, -5 ); 
+    // I do not understand, how this BMP_CHECK_ERROR works. There shuld be return value. 
 
     /* Free output image memory */
     BMP_Free( Canvas );
